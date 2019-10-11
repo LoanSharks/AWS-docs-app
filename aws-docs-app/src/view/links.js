@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { getAwsTemplate } from "../service/aws-docs";
 
+// export default async function() {
+//   const links = await getAwsTemplate();
+//   console.log(links);
+//   return null;
+// }
+
 export default () => {
-  const links = getAwsTemplate();
-  console.log(links);
+  const [links, setLinks] = useState([]);
+
+  useEffect(() => {
+    getAwsTemplate().then(setLinks);
+  }, []);
+
   return (
-    <div>
-      <h1>hello</h1>
-    </div>
+    <React.Fragment>
+      {links.map(link => (
+        <div>
+          <label>name</label>
+          <div>{link.name}</div>
+          <label>size</label>
+          <div>{link.size}</div>
+          <label>doc id</label>
+          <div>{link.docId}</div>
+        </div>
+      ))}
+    </React.Fragment>
   );
 };
