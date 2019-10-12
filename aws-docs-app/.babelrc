@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    "transform-react-pug",
+    "transform-react-jsx"
+  ],
+  "presets": [
+    "env",
+    "stage-0",
+    "react"
+  ]
+}

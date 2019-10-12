@@ -1,11 +1,11 @@
-import React from "react";
-import "./App.css";
-import Links from "./view/links";
+import React from 'react'
+import './App.scss'
+import { AwsDocs } from './view/AwsDocs'
 
 function App() {
   return (
     <div className="App">
-      <Links />
+      <AwsDocs />
     </div>
   );
 }
